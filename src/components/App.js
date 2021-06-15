@@ -1,12 +1,13 @@
-import "../stylesheets/App.css";
+import "../stylesheets/App.scss";
+import CharacterDetail from "./CharacterDetail";
+import CharacterList from "./CharacterList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hola Mundo</p>
-      </header>
-    </div>
+    <>
+      <CharacterList />
+      <CharacterDetail />
+    </>
   );
 }
 
