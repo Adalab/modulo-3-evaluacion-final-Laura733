@@ -1,0 +1,13 @@
+.section__card {
+  width: 200px;
+  border: 1px solid black;
+  margin: 15px;
+  &--img {
+    width: 100%;
+    background-position: center;
+  }
+  &--name {
+    background-color: cadetblue;
+    padding: 5px;
+  }
+}

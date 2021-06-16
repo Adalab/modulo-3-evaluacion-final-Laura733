@@ -1,0 +1,9 @@
+.section__list {
+  margin: 20px;
+}
+.section__list--elements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
