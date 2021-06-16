@@ -10,10 +10,10 @@ function FilterByName(props) {
 
   return (
     <>
-      <label htmlFor='filterName'>Nombre del personaje</label>
+      <label htmlFor='filterName'>Busca tu personaje</label>
       <input
         className='section__filters--filterName'
-        placeholder='escribe el nombre del personaje'
+        placeholder='Escribe el nombre del personaje'
         type='text'
         name='name'
         id='filterName'

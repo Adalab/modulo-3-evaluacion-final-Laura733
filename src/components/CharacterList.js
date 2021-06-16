@@ -10,12 +10,7 @@ function CharacterList(props) {
 
   return (
     <section className='section__list'>
-      <ul
-        filterCharacters={props.filterCharacters}
-        className='section__list--elements'
-      >
-        {characterElements}
-      </ul>
+      <ul className='section__list--elements'>{characterElements}</ul>
     </section>
   );
 }

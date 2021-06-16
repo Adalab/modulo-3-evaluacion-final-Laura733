@@ -5,7 +5,7 @@ import "../stylesheets/CharacterCard.scss";
 function CharacterCard(props) {
   return (
     <>
-      <Link to='/card'>
+      <Link to='/detail'>
         <section className='section__card'>
           <img
             className='section__card--img'
