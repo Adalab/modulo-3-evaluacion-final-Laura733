@@ -21,7 +21,12 @@ function CharacterDetail(props) {
             <li>Especie: {props.character.specie}</li>
             <li>Origen: {props.character.origin}</li>
             <li>Episodios: {props.character.episode.length}</li>
-            <li>Comparte: {props.character.url}</li>
+            <a
+              className='section__detail--share'
+              href={`http://localhost:3000/#/detail/${props.character.id}`}
+            >
+              Compartir tarjeta
+            </a>
           </ul>
         </div>
       </section>

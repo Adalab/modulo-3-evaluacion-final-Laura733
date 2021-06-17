@@ -18,6 +18,7 @@ function FilterByName(props) {
         name='name'
         id='filterName'
         onChange={handleChangeName}
+        value={props.filterName}
       />
     </>
   );

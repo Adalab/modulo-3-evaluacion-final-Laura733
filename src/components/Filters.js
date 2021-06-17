@@ -6,8 +6,14 @@ import FiltersBySpecies from "./FilterBySpecies";
 function Filters(props) {
   return (
     <form onSubmit={props.handleForm} className='section__filters'>
-      <FilterByName handleFilters={props.handleFilters} />
-      <FiltersBySpecies handleFilters={props.handleFilters} />
+      <FilterByName
+        handleFilters={props.handleFilters}
+        filterName={props.filterName}
+      />
+      <FiltersBySpecies
+        handleFilters={props.handleFilters}
+        filterSpecies={props.filterSpecies}
+      />
     </form>
   );
 }

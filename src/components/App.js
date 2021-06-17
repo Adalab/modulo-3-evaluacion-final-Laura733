@@ -42,9 +42,8 @@ function App() {
     } else {
       setFilterSpecies(data.value);
     }
-    //     }else(data.key !=="filerName"){
-    // return {`No hay ningún personaje que coincida con ${data.value}`}
   };
+
   const filterCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
@@ -78,7 +77,12 @@ function App() {
       </h1>
       <Switch>
         <Route exact path='/'>
-          <Filters handleFilters={handleFilters} handleForm={handleForm} />
+          <Filters
+            handleFilters={handleFilters}
+            handleForm={handleForm}
+            filterName={filterName}
+            filterSpecies={filterSpecies}
+          />
           <CharacterList characters={filterCharacters} />
         </Route>
         <Route

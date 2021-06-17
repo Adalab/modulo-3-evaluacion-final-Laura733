@@ -20,16 +20,13 @@
     border: 1px solid rgb(18, 202, 226);
     margin: 30px;
   }
-  // @media all and (min-width: 320px) {
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-  //   width: 100%;
-  // }
-  //   &--link{
-  //     margin: auto;
-  //   }
-  //   &--img{
 
-  //   }
+  &--share {
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background: white;
+    color: black;
+  }
 }
