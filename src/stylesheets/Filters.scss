@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  color: white;
+  font-weight: bold;
 
   &--filterName {
-    width: 250px;
+    width: 200px;
   }
 
   &--filterSpecies {

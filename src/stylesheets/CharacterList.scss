@@ -1,9 +1,8 @@
 .section__list {
-  margin: 20px;
+  margin: 30px;
 }
 .section__list--elements {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }

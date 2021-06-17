@@ -42,15 +42,15 @@ function App() {
     } else {
       setFilterSpecies(data.value);
     }
+    //     }else(data.key !=="filerName"){
+    // return {`No hay ningún personaje que coincida con ${data.value}`}
   };
   const filterCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
     })
     .filter((character) => {
-      return filterSpecies === "all"
-        ? true
-        : character.specie === filterSpecies;
+      return filterSpecies === "" ? true : character.specie === filterSpecies;
     });
 
   const renderCharacterDetail = (props) => {

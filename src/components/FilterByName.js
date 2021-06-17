@@ -13,7 +13,7 @@ function FilterByName(props) {
       <label htmlFor='filterName'>Busca tu personaje</label>
       <input
         className='section__filters--filterName'
-        placeholder='Escribe el nombre del personaje'
+        placeholder='Ej: Abradolf Lincler'
         type='text'
         name='name'
         id='filterName'
