@@ -13,6 +13,7 @@ const getDataFromApi = () => {
           specie: characters.species,
           origin: characters.origin.name,
           episode: characters.episode,
+          url: characters.url,
         };
       });
     });

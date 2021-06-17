@@ -5,10 +5,10 @@ import "./stylesheets/index.scss";
 import App from "./components/App";
 
 ReactDOM.render(
-  <React.StrictMode>
+ 
     <HashRouter>
       <App />
-    </HashRouter>
-  </React.StrictMode>,
+    </HashRouter>,
+ 
   document.getElementById("root")
 );

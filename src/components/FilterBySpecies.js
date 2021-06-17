@@ -17,8 +17,8 @@ function FiltersBySpecies(props) {
         onChange={handleChangeSelect}
       >
         <option value='all'>Todos</option>
-        <option value='human'>Human</option>
-        <option value='alien'>Alien</option>
+        <option value='Human'>Human</option>
+        <option value='Alien'>Alien</option>
       </select>
     </>
   );

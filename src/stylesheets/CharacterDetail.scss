@@ -1,0 +1,22 @@
+.section__detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750px;
+  border: 1px solid rgb(18, 202, 226);
+  background: rgb(18, 202, 226);
+  color: white;
+  margin: auto;
+
+  &--link {
+    margin-left: 700px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  &--img {
+    border: 1px solid rgb(18, 202, 226);
+    margin: 30px;
+  }
+}

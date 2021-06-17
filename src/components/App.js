@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import getDataFromApi from "./services/getDataFromApi";
 import "../stylesheets/App.scss";
+import img from "../images/img.png";
 import CharacterDetail from "./CharacterDetail";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import PageNotFound from "./PageNotFound";
 import ls from "../components/services/localStorage";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [characters, setCharacters] = useState(ls.get("characters", []));
   const [filterName, setFilterName] = useState(ls.get("filterName", ""));
   const [filterSpecies, setFilterSpecies] = useState(
-    ls.get("filterSpecies", "all")
+    ls.get("filterSpecies", "")
   );
 
   useEffect(() => {
@@ -30,6 +32,10 @@ function App() {
     ls.set("filterSpecies", filterSpecies);
   }, [characters, filterName, filterSpecies]);
 
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  };
+
   const handleFilters = (data) => {
     if (data.key === "filterName") {
       setFilterName(data.value);
@@ -40,11 +46,6 @@ function App() {
   const filterCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
-      // if (character === filterName) {
-      //   return character.name.toLowerCase().includes(filterName.toLowerCase());
-      // } else {
-      //   return "No hay ningún personaje con la palabra...";
-      // }
     })
     .filter((character) => {
       return filterSpecies === "all"
@@ -53,31 +54,40 @@ function App() {
     });
 
   const renderCharacterDetail = (props) => {
-    const routeCharacterId = props.match.params.characterId;
+    const routeCharacterId = parseInt(props.match.params.characterId);
     const foundCharacter = characters.find((character) => {
       return character.id === routeCharacterId;
     });
     if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
     } else {
-      return <h2>El personaje que busca no existe</h2>;
+      return (
+        <h2 className='CharacterNotFound'>
+          <Link className='CharacterNotFound' to='/'>
+            El personaje que busca no existe
+          </Link>
+        </h2>
+      );
     }
   };
 
   return (
     <>
-      <h1 className='title'>Rick and Morty</h1>
+      <h1 className='title'>
+        <img className='img' src={img} alt='Rick and Morty' />
+      </h1>
       <Switch>
-        <Route exact path='/' />
-        <Filters handleFilters={handleFilters} />
-        <CharacterList characters={filterCharacters} />
-        {/* <CharacterDetail characters={filterCharacters} /> */}
-        <Route />
-        <Route path='/detail/:characterId' render={renderCharacterDetail} />
-        <Route />
-        <Route />
-        <PageNotFound />
-        <Route />
+        <Route exact path='/'>
+          <Filters handleFilters={handleFilters} handleForm={handleForm} />
+          <CharacterList characters={filterCharacters} />
+        </Route>
+        <Route
+          path='/detail/:characterId'
+          render={renderCharacterDetail}
+        ></Route>
+        <Route>
+          <PageNotFound />
+        </Route>
       </Switch>
     </>
   );
