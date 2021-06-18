@@ -16,7 +16,9 @@ function App() {
   const [filterSpecies, setFilterSpecies] = useState(
     ls.get("filterSpecies", "")
   );
-
+  const [filterEpisodes, setFilterEpisodes] = useState(
+    ls.get("filterEpisodes", 0)
+  );
   useEffect(() => {
     getDataFromApi().then((data) => {
       setCharacters(data);
@@ -39,8 +41,10 @@ function App() {
   const handleFilters = (data) => {
     if (data.key === "filterName") {
       setFilterName(data.value);
-    } else {
+    } else if (data.key === "filterSpecies") {
       setFilterSpecies(data.value);
+    } else {
+      setFilterEpisodes(data.value);
     }
   };
 
@@ -50,6 +54,12 @@ function App() {
     })
     .filter((character) => {
       return filterSpecies === "" ? true : character.specie === filterSpecies;
+    })
+    .filter((character) => {
+      console.log(character.episode.length, filterEpisodes);
+      return filterEpisodes === 0
+        ? true
+        : character.episode.length === filterEpisodes;
     });
 
   const renderCharacterDetail = (props) => {
@@ -82,6 +92,7 @@ function App() {
             handleForm={handleForm}
             filterName={filterName}
             filterSpecies={filterSpecies}
+            filterEpisodes={filterEpisodes}
           />
           <CharacterList characters={filterCharacters} />
         </Route>

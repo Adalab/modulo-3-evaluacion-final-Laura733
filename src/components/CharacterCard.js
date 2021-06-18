@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import "../stylesheets/CharacterCard.scss";
 
 function CharacterCard(props) {
+  console.log(props);
   return (
     <>
-      <Link className="section__card--link" to={`/detail/${props.character.id}`}>
+      <Link
+        className='section__card--link'
+        to={`/detail/${props.character.id}`}
+      >
         <section className='section__card'>
           <img
             className='section__card--img'
@@ -15,6 +19,7 @@ function CharacterCard(props) {
           <div className='section__card--name'>
             <h1>{props.character.name}</h1>
             <span>{props.character.specie}</span>
+            <p>{props.character.episode.length}</p>
           </div>
         </section>
       </Link>

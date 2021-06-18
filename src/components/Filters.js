@@ -2,6 +2,7 @@ import React from "react";
 import "../stylesheets/Filters.scss";
 import FilterByName from "./FilterByName";
 import FiltersBySpecies from "./FilterBySpecies";
+import FilterByEpisodes from "./FilterByEpisodes";
 
 function Filters(props) {
   return (
@@ -14,6 +15,8 @@ function Filters(props) {
         handleFilters={props.handleFilters}
         filterSpecies={props.filterSpecies}
       />
+
+      <FilterByEpisodes handleFilters={props.handleFilters} filterEpisodes={props.filterEpisodes} />
     </form>
   );
 }
