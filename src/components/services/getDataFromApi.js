@@ -1,4 +1,4 @@
-const result = "https://rickandmortyapi.com/documentation/#get-all-characters";
+const result = "http://rickandmortyapi.com/documentation/#get-all-characters";
 const getDataFromApi = () => {
   return fetch(result)
     .then((response) => response.json())
