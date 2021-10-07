@@ -5,7 +5,10 @@ import "../stylesheets/CharacterCard.scss";
 function CharacterCard(props) {
   return (
     <>
-      <Link className="section__card--link" to={`/detail/${props.character.id}`}>
+      <Link
+        className='section__card--link'
+        to={`/detail/${props.character.id}`}
+      >
         <section className='section__card'>
           <img
             className='section__card--img'
@@ -17,6 +20,7 @@ function CharacterCard(props) {
             <span>{props.character.specie}</span>
           </div>
         </section>
+        <button>hola</button>
       </Link>
     </>
   );
