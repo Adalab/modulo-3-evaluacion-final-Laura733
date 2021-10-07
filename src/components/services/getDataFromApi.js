@@ -1,4 +1,6 @@
-const result = "http://rickandmortyapi.com/documentation/#get-all-characters";
+const result =
+  "//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json";
+// "//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json";
 const getDataFromApi = () => {
   return fetch(result)
     .then((response) => response.json())
