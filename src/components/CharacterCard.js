@@ -20,7 +20,6 @@ function CharacterCard(props) {
             <span>{props.character.specie}</span>
           </div>
         </section>
-        <button>hola</button>
       </Link>
     </>
   );
